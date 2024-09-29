@@ -246,8 +246,25 @@ body {
 /* Start Header */
 header {
   background-color: var(--section-background);
-}
+  z-index: 5;
 
+}
+header.active {
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.913);
+  animation: header 1s ease;
+  z-index: 5;
+  width: 100%;
+}
+@keyframes header {
+  0% {
+      top: -20%;
+  }
+  100% {
+      top: 0;
+  }
+}
 header .container {
 
   display: flex;

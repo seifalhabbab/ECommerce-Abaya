@@ -1,3 +1,13 @@
+const header = document.querySelector("header");
+
+window.onscroll = () => {
+  if (window.scrollY >= 200) {
+    header.classList.add("active");
+  } else {
+    header.classList.remove("active");
+  }
+};
+
 let menuLis = document.querySelectorAll("header nav .menu li");
 const menu = document.getElementById("toggle-menu");
 const menuList = document.getElementById("menu"); // header ul
@@ -55,9 +65,9 @@ const sr = ScrollReveal({
   mobile: true,
 });
 
-sr.reveal("header", { delay: 200, origin: "top" });
+// sr.reveal("header", { delay: 100, origin: "top" });
 sr.reveal(".main-title", { delay: 200, origin: "bottom" });
-sr.reveal("section.search", { delay: 200, origin: "top" });
+// sr.reveal("section.search", { delay: 200, origin: "top" });
 sr.reveal("section.landing", { delay: 200, origin: "top" });
 sr.reveal(".categories .product", { delay: 200, origin: "left" });
 sr.reveal(".categories .left", { delay: 200, origin: "right" });
