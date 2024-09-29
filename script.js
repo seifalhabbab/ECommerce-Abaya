@@ -69,11 +69,21 @@ const sr = ScrollReveal({
 sr.reveal(".main-title", { delay: 200, origin: "bottom" });
 // sr.reveal("section.search", { delay: 200, origin: "top" });
 sr.reveal("section.landing", { delay: 200, origin: "top" });
-sr.reveal(".categories .product", { delay: 200, origin: "left" });
-sr.reveal(".categories .left", { delay: 200, origin: "right" });
+// sr.reveal(".categories .product", { delay: 200, origin: "left" });
+// sr.reveal(".categories .left", { delay: 200, origin: "right" });
 sr.reveal(".image-slide", { delay: 200, origin: "left" });
 sr.reveal(".newest .product", { delay: 200, origin: "bottom" });
 sr.reveal(".testimonials", { delay: 200, origin: "bottom" });
 sr.reveal(".services", { delay: 200, origin: "bottom" });
 sr.reveal(".links", { delay: 200, origin: "bottom" });
 // sr.reveal("footer", { delay: 200, origin: "bottom" });
+
+let animated = false;
+window.addEventListener("scroll", () => {
+  let categories = document.querySelector(".categories .product-grid");
+  let rect = categories.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0 && !animated) {
+    categories.classList.add("animate-categories");
+    animated = true;
+  }
+});

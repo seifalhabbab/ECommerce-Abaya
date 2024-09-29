@@ -530,18 +530,26 @@ header .profile .bag:hover .bag-l {
 .categories {
   padding-top: calc(var(--main-padding) / 2);
   background-color: var(--body-background);
+    
 }
 
 .categories .container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: hidden;
+}
+.categories .product-grid.animate-categories {
+  animation: slide 2s forwards;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 .categories .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
+  transform: translateX(-120%);
+  opacity: 0;
 }
 
 @media (max-width: 991px) {
@@ -1462,5 +1470,12 @@ footer a:hover {
     left: 100%;
   }
 }
+@keyframes slide {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 /* End Animation */
+
